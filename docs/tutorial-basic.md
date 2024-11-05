@@ -371,23 +371,23 @@ The empty index action gives the clean pass to a view with the form definition (
 ```html
 <h2>Sign up using this form</h2>
 
-<?php echo $this->tag->form("signup/register"); ?>
+<?php echo $this->tag->form(["action" => "signup/register"]); ?>
 
     <p>
         <label for="name">Name</label>
-        <?php echo $this->tag->textField("name"); ?>
+        <?php echo $this->tag->inputText("name"); ?>
     </p>
 
     <p>
         <label for="email">E-Mail</label>
-        <?php echo $this->tag->textField("email"); ?>
+        <?php echo $this->tag->inputText("email"); ?>
     </p>
 
     <p>
-        <?php echo $this->tag->submitButton("Register"); ?>
+        <?php echo $this->tag->inputSubmit("Register"); ?>
     </p>
 
-</form>
+<?php echo $this->tag->close('form'); ?>
 ```
 
 Viewing the form in your browser will display the following:
