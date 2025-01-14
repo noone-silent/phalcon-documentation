@@ -1301,8 +1301,8 @@ $insert
     ->into('co_invoices')
     ->columns(
         [
-            'inv_cst_id', 
-            'inv_total' => 100.12
+            'inv_cst_id' => 2, 
+            'inv_total'  => 100.12
         ]
     )
 ;

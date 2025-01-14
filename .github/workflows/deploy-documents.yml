@@ -64,7 +64,6 @@ jobs:
         run: |
           python ./update-nfr.py
 
-
       - name: Determine versioning parameters
         id: determine-versioning
         run: |
