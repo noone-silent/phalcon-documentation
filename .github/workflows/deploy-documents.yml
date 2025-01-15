@@ -93,8 +93,14 @@ jobs:
           mike deploy \
             --update-aliases \
             --alias-type=redirect \
-            --branch production \
             --push \
             ${{ env.PH_DOCS_VERSION }} \
             ${{ env.PH_DOCS_ALIAS }}
+#          mike deploy \
+#            --update-aliases \
+#            --alias-type=redirect \
+##            --branch production \
+#            --push \
+#            ${{ env.PH_DOCS_VERSION }} \
+#            ${{ env.PH_DOCS_ALIAS }}
           echo "Deployed"
