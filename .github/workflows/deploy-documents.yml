@@ -97,6 +97,7 @@ jobs:
             ${{ env.PH_DOCS_VERSION }} \
             ${{ env.PH_DOCS_ALIAS }}
           echo "Deployed"
+
 #          mike deploy \
 #            --update-aliases \
 #            --alias-type=redirect \
