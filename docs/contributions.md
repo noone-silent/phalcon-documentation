@@ -28,7 +28,7 @@ When you create a pull request, we have a handy template to help you describe wh
 ## Documentation
 If programming in Zephir seems daunting, there are plenty of areas that you can contribute. You can always check the documentation for any typographic or context errors. You could also enhance the documentation with more examples on the respective pages.
 
-All you have to do is go to our [docs-apps][phalcon-docs-apps] repository, fork it, make the changes, and send us a pull request.
+All you have to do is go to our [documentation][phalcon-documentation] repository, fork it, make the changes, and send us a pull request.
 
 ## Translations
 We have removed the translations from v5.5.x onward. There was not that much traffic from the community to help with translating the documentation into different languages.
@@ -84,7 +84,7 @@ Thanks!
 [github]: https://github.com
 [phalcon-org]: https://github.com/phalcon
 [github-pr]: https://help.github.com/articles/using-pull-requests/
-[phalcon-docs-app]: https://github.com/phalcon/docs-app
+[phalcon-documentation]: https://github.com/phalcon/documentation
 [phalcon-discussions]: https://phalcon.io/discussions
 [phalcon-discord]: https://phalcon.io/discord
 [tests]: reproducible-tests.md

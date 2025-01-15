@@ -679,13 +679,13 @@ try {
 [Phalcon\Mvc\Application][mvc-application] can send events to the [EventsManager][events] if present. Events are triggered using the type application. The supported events are:
 
 
-| Event Name            | Triggered                                                    |
-|-----------------------|--------------------------------------------------------------|
-| `boot`                | Executed when the application handles its first request      |
+| Event Name            | Triggered                                                      |
+|-----------------------|----------------------------------------------------------------|
+| `boot`                | Executed when the application handles its first request        |
 | `beforeStartModule`   | Before initializing a module, only when modules are registered |
 | `afterStartModule`    | After initializing a module, only when modules are registered  |
-| `beforeHandleRequest` | Before execute the dispatch loop                             |
-| `afterHandleRequest`  | After execute the dispatch loop                              |
+| `beforeHandleRequest` | Before execute the dispatch loop                               |
+| `afterHandleRequest`  | After execute the dispatch loop                                |
 
 Here's an example of how to attach listeners to this component:
 
