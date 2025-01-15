@@ -89,7 +89,7 @@ jobs:
           echo "Deploying with Mike"
           git config user.name niden
           git config user.email nikos@niden.net
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/production:refs/remotes/origin/production
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/gh-pages:refs/remotes/origin/gh-pages
           mike deploy \
             --update-aliases \
             --alias-type=redirect \
@@ -98,6 +98,7 @@ jobs:
             ${{ env.PH_DOCS_ALIAS }}
           echo "Deployed"
 
+#          git fetch --no-tags --prune --depth=1 origin +refs/heads/production:refs/remotes/origin/production
 #          mike deploy \
 #            --update-aliases \
 #            --alias-type=redirect \
