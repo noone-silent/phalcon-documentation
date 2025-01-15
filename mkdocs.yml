@@ -211,8 +211,6 @@ plugins:
         'en/views.md': views.md
         'en/volt.md': volt.md
         'en/webserver-setup.md': webserver-setup.md
-  - mike:
-      alias_type: copy
 
 # Hooks
 #hooks:

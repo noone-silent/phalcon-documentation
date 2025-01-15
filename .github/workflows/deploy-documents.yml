@@ -92,6 +92,7 @@ jobs:
           git fetch --no-tags --prune --depth=1 origin +refs/heads/production:refs/remotes/origin/production
           mike deploy \
             --update-aliases \
+            --alias-type=copy \
             --branch production \
             --push \
             ${{ env.PH_DOCS_VERSION }} \
