@@ -1975,7 +1975,7 @@ Additionally, the following methods allow you to reset specific areas of the que
 - `resetFlags()` - Resets the `flags`
 
 #### Subselect Objects
-If you want to create a subselect, call the `subSelect()` method. When you are done building the subselect, give it an alias using the `asAlias()` method; the object itself can be used in the desired condition or expression.
+If you want to create a subselect, call the `subSelect()` method. When you are done building the subselect, give it an alias using the `asAlias()` method; the object itself can be used in the desired condition or expression. When used in the `FROM` condition, you will need to call the `getStatement()` method, to return the correct SQL statement back to the `Select` object.
 
 ```php
 <?php
@@ -1993,6 +1993,83 @@ $select
 
 // SELECT *
 // FROM (SELECT inv_id FROM co_invoices) AS inv 
+```
+
+When we need to pass parameters, we can just add them to the subselect.
+
+```php
+<?php
+
+$invoiceId  = 1;
+$maxInvoice = 100;
+$select
+    ->from(
+        $select
+            ->subSelect()
+            ->columns('inv_id')
+            ->from('co_invoices')
+            ->where('inv_id > ', $invoiceId)
+            ->asAlias('inv')
+            ->getStatement()
+    )
+    ->where('inv_id <', $maxInvoice)
+;
+
+// SELECT *
+// FROM (SELECT inv_id FROM co_invoices WHERE inv_id > __1__) AS inv
+// WHERE inv_id < __2__ 
+```
+
+Subselects can be used also in `JOIN` and `WHERE` conditions as follows:
+
+```php
+<?php
+
+$select
+    ->from('co_invoices')
+    ->join(
+        'LEFT'
+        $select
+            ->subSelect()
+            ...
+            ->asAlias('subAlias')
+            ->getStatement()
+    )
+;
+```
+
+For `WHERE` in particular, you do not need to convert it to a string using `getStatement()`
+
+```php
+<?php
+
+$customerId = 1;
+$total      = 100.0
+$select
+    ->columns(
+        [
+            'inv_id',
+            'inv_total'
+        ]   
+    )
+    ->from('co_invoices')
+    ->where(
+        'inv_id IN '
+        $select
+            ->subSelect()
+            ->columns(
+                [
+                    'cst_inv_id',
+                ]
+            )
+            ->from('co_customers')
+            ->where('inv_total > ', $total)
+    )
+;
+
+// SELECT inv_id, inv_total
+// FROM co_invoices
+// WHERE inv_id IN (SELECT cst_inv_id FROM co_customers WHERE inv_total > __1__) 
 ```
 
 ### Update
