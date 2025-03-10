@@ -341,6 +341,7 @@ This adapter utilizes PHP's [redis][redis] extension to connect to a Redis serve
 | `persistent`        | `false`     |
 | `auth`              |             |
 | `socket`            |             |
+| `ssl`               |             |
 
 If `auth` data is defined, the adapter will try to authenticate using the passed data. If there is an error in the options, or the server cannot connect or authenticate, a `Phalcon\Storage\Exception` will be thrown.
 

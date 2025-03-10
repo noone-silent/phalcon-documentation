@@ -885,11 +885,13 @@ The events available in Phalcon are:
 | [Db][db-layer]              | `db:rollbackTransaction`             | Db                                                      |
 | [Db][db-layer]              | `db:rollbackSavepoint`               | Db, Savepoint Name                                      |
 | [Dispatcher][dispatcher]    | `dispatch:afterBinding`              | Dispatcher                                              |
+| [Dispatcher][dispatcher]    | `dispatch:afterCallAction`           | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:afterDispatch`             | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:afterDispatchLoop`         | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:afterExecuteRoute`         | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:afterInitialize`           | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:beforeDispatch`            | Dispatcher                                              |
+| [Dispatcher][dispatcher]    | `dispatch:beforeCallAction`          | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:beforeDispatchLoop`        | Dispatcher                                              |
 | [Dispatcher][dispatcher]    | `dispatch:beforeException`           | Dispatcher, Exception                                   |
 | [Dispatcher][dispatcher]    | `dispatch:beforeExecuteRoute`        | Dispatcher                                              |

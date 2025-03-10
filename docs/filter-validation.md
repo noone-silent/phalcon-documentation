@@ -657,7 +657,7 @@ $validator->add(
 ```
 
 ### Email
-Checks if a value has a correct e-mail format
+Checks if a value has a correct e-mail format. If the data to be validated contains UTF-8 characters, you can set the `allowUTF8` option to `true` to allow them.
 
 ```php
 <?php
@@ -687,6 +687,16 @@ $validator->add(
                 "email"        => "The e-mail is not valid",
                 "anotherEmail" => "The another e-mail is not valid",
             ],
+        ]
+    )
+);
+
+$validator->add(
+    "täst@example.com",
+    new Email(
+        [
+            "message" => "The e-mail is not valid",
+            "allowUTF8" => true,
         ]
     )
 );

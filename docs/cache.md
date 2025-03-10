@@ -77,6 +77,11 @@ $value = $cache->getMultiple(['my-key1', 'my-key2']);
 $value = $cache->getMultiple(['my-key1', 'my-key2'], 'default');
 ```
 
+!!! info "NOTE"
+
+    If the Redis adapter is used, the adapter will use `mget` to retrieve multiple keys. This is a more efficient way to retrieve multiple keys from Redis.
+
+
 ### `has`
 
 To check whether a key exists in the cache (or it has not expired) you can call the `has()` method. The method will return `true` if the key exists, or `false` otherwise.
