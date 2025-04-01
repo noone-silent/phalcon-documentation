@@ -362,7 +362,6 @@ Sets the default task suffix
 
 -   __Uses__
     
-    - `Phalcon\Cli\RouterInterface`
     - `Phalcon\Cli\Router\Exception`
     - `Phalcon\Cli\Router\Route`
     - `Phalcon\Cli\Router\RouteInterface`
@@ -548,13 +547,13 @@ Handles routing information received from command-line arguments
 
 
 ```php
-public function setDefaultAction( string $actionName ): RouterInterface;
+public function setDefaultAction( string $actionName ): Router;
 ```
 Sets the default action name
 
 
 ```php
-public function setDefaultModule( string $moduleName ): RouterInterface;
+public function setDefaultModule( string $moduleName ): Router;
 ```
 Sets the name of the default module
 
@@ -566,7 +565,7 @@ Sets the default controller name
 
 
 ```php
-public function setDefaults( array $defaults ): RouterInterface;
+public function setDefaults( array $defaults ): Router;
 ```
 Sets an array of default paths. If a route is missing a path the router
 will use the defined here. This method must not be used to set a 404
@@ -1014,13 +1013,13 @@ Returns processed extra params
 
 
 ```php
-public function getRouteById( mixed $id ): RouteInterface | bool;
+public function getRouteById( mixed $id ): RouteInterface;
 ```
 Returns a route object by its id
 
 
 ```php
-public function getRouteByName( string $name ): RouteInterface | bool;
+public function getRouteByName( string $name ): RouteInterface;
 ```
 Returns a route object by its name
 
@@ -1044,13 +1043,13 @@ Handles routing information received from the rewrite engine
 
 
 ```php
-public function setDefaultAction( string $actionName ): RouterInterface;
+public function setDefaultAction( string $actionName ): void;
 ```
 Sets the default action name
 
 
 ```php
-public function setDefaultModule( string $moduleName ): RouterInterface;
+public function setDefaultModule( string $moduleName ): void;
 ```
 Sets the name of the default module
 
@@ -1062,7 +1061,7 @@ Sets the default task name
 
 
 ```php
-public function setDefaults( array $defaults ): RouterInterface;
+public function setDefaults( array $defaults ): void;
 ```
 Sets an array of default paths
 

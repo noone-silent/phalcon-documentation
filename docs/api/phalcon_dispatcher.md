@@ -29,6 +29,7 @@ hide:
     - `Phalcon\Filter\FilterInterface`
     - `Phalcon\Mvc\Model\Binder`
     - `Phalcon\Mvc\Model\BinderInterface`
+    - `Phalcon\Support\Collection`
 
 -   __Extends__
     

@@ -154,6 +154,9 @@ This component offers an easy way to create breadcrumbs for your application.
 The resulting HTML when calling `render()` will have each breadcrumb enclosed
 in `<dt>` tags, while the whole string is enclosed in `<dl>` tags.
 
+@deprecated Will be removed in future version
+Use {@see Phalcon\Html\Helper\Breadcrumbs} instead.
+
 
 ### Properties
 ```php
@@ -953,6 +956,193 @@ Class Body
 public function __invoke( array $attributes = [] ): string;
 ```
 Produce a `<body>` tag.
+
+
+
+
+## Html\Helper\Breadcrumbs 
+
+[Source on GitHub](https://github.com/phalcon/cphalcon/blob/5.0.x/phalcon/Html/Helper/Breadcrumbs.zep)
+
+
+-   __Namespace__
+
+    - `Phalcon\Html\Helper`
+
+-   __Uses__
+    
+    - `Phalcon\Html\Escaper\EscaperInterface`
+    - `Phalcon\Support\Helper\Str\Interpolate`
+
+-   __Extends__
+    
+    `AbstractHelper`
+
+-   __Implements__
+    
+
+This component offers an easy way to create breadcrumbs for your application.
+The resulting HTML when calling `render()` will have each breadcrumb enclosed
+in `<li>` tags, while the whole string is enclosed in `<nav>` and `<ol>` tags.
+
+@phpstan-type TTemplate = array{
+     main: string,
+     line: string,
+     last: string,
+}
+@phpstan-type TElement = array{
+     attributes: array<string, string>,
+     icon: string,
+     link: string,
+     text: string,
+}
+
+
+### Properties
+```php
+/**
+ * @var array<string, string>
+ */
+private $attributes;
+
+/**
+ * Keeps all the breadcrumbs.
+ *
+ * @var array<int, TElement>
+ */
+private $data;
+
+/**
+ * Crumb separator.
+ *
+ * @var string
+ */
+private $separator = <li>/</li>;
+
+/**
+ * The HTML template to use to render the breadcrumbs.
+ *
+ * @var TTemplate
+ */
+private $template;
+
+/**
+ * The HTML template to use to render the breadcrumbs.
+ *
+ * @var Interpolate
+ */
+private $interpolator;
+
+```
+
+### Methods
+
+```php
+public function __construct( EscaperInterface $escaper );
+```
+AbstractHelper constructor.
+
+
+```php
+public function __invoke( string $indent = string, string $delimiter = null ): Breadcrumbs;
+```
+Sets the indent and delimiter and returns the object back.
+
+
+```php
+public function add( string $text, string $link = string, string $icon = string, array $attributes = [] ): Breadcrumbs;
+```
+Adds a new crumb.
+
+```php
+// Adding a crumb with a link
+$breadcrumbs->add("Home", "/");
+
+// Adding a crumb with added attributes
+$breadcrumbs->add("Home", "/", ["class" => "main"]);
+
+// Adding a crumb without a link (normally the last one)
+$breadcrumbs->add("Users");
+```
+
+
+```php
+public function clear(): void;
+```
+Clears the crumbs.
+
+```php
+$breadcrumbs->clear()
+```
+
+
+```php
+public function clearAttributes(): Breadcrumbs;
+```
+Clear the attributes of the parent element.
+
+
+```php
+public function getAttributes(): array;
+```
+Get the attributes of the parent element.
+
+
+```php
+public function getSeparator(): string;
+```
+Returns the separator.
+
+
+```php
+public function getTemplate(): array;
+```
+Return the current template.
+
+
+```php
+public function remove( int $index ): void;
+```
+Removes crumb by url.
+
+```php
+// Remove the second element
+$breadcrumbs->remove(2);
+```
+
+
+```php
+public function render(): string;
+```
+Renders and outputs breadcrumbs based on previously set template.
+
+```php
+echo $breadcrumbs->render();
+```
+
+
+```php
+public function setAttributes( array $attributes ): Breadcrumbs;
+```
+Set the attributes for the parent element.
+
+
+```php
+public function setSeparator( string $separator ): Breadcrumbs;
+```
+Set the separator.
+
+
+```php
+public function setTemplate( string $main, string $line, string $last ): Breadcrumbs;
+```
+Set the HTML template.
+
+
+```php
+public function toArray(): array;
+```
+Returns the internal breadcrumbs array.
 
 
 
@@ -3235,6 +3425,7 @@ Serializer method
     
     - `Phalcon\Factory\AbstractFactory`
     - `Phalcon\Html\Escaper\EscaperInterface`
+    - `Phalcon\Html\Helper\Breadcrumbs`
     - `Phalcon\Html\Helper\Doctype`
     - `Phalcon\Html\Helper\Input\Checkbox`
     - `Phalcon\Html\Helper\Input\Color`
@@ -3288,6 +3479,7 @@ The class implements `__call()` to allow calling helper objects as methods.
 
 @method string        a(string $href, string $text, array $attributes = [], bool $raw = false)
 @method string        base(string $href, array $attributes = [])
+@method Breadcrumbs   breadcrumbs(string $indent = '    ', string $delimiter = "\n")
 @method string        body(array $attributes = [])
 @method string        button(string $text, array $attributes = [], bool $raw = false)
 @method string        close(string $tag, bool $raw = false)

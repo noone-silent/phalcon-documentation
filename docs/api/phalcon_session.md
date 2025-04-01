@@ -379,6 +379,12 @@ protected function getArrVal( array $collection, mixed $index, mixed $defaultVal
 
 
 ```php
+protected function getGlobFiles( string $pattern ): array | false;
+```
+Gets the glob array or returns false on failure
+
+
+```php
 protected function phpFileExists( string $filename );
 ```
 

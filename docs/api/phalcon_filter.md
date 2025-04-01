@@ -2223,6 +2223,16 @@ $validator->add(
         ]
     )
 );
+
+$validator->add(
+    "täst@example.com",
+    new EmailValidator(
+        [
+            "message" => "The e-mail is not valid",
+            "allowUTF8" => true,
+        ]
+    )
+);
 ```
 
 

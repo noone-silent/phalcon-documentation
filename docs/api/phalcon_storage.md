@@ -168,9 +168,21 @@ Returns all the keys stored
 
 
 ```php
+public function getLifetime(): int;
+```
+Returns the lifetime
+
+
+```php
 public function getPrefix(): string;
 ```
 Returns the prefix
+
+
+```php
+public function getSerializer(): SerializerInterface;
+```
+Get the serializer
 
 
 ```php
@@ -1011,7 +1023,7 @@ protected function phpUnlink( string $filename ): bool;
 /**
  *
  *
- * @var string|null
+ * @var int|null
  */
 protected $fetching;
 
@@ -1255,7 +1267,7 @@ Unserialize data
 
 
 ```php
-public function getData();
+public function getData(): mixed;
 ```
 
 
@@ -1361,7 +1373,7 @@ file that was distributed with this source code.
 ### Methods
 
 ```php
-public function serialize();
+public function serialize(): string;
 ```
 Serializes data
 
@@ -1446,7 +1458,7 @@ AbstractSerializer constructor.
 
 
 ```php
-public function serialize();
+public function serialize(): mixed;
 ```
 Serializes data
 

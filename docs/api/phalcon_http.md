@@ -115,7 +115,7 @@ protected $value;
 ### Methods
 
 ```php
-public function __construct( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = null, string $domain = null, bool $httpOnly = null, array $options = [] );
+public function __construct( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = bool, string $domain = string, bool $httpOnly = bool, array $options = [] );
 ```
 Phalcon\Http\Cookie constructor.
 
@@ -980,13 +980,13 @@ Note: This method relies on the `$_SERVER["HTTP_ACCEPT_LANGUAGE"]` header.
 ```php
 public function getPut( string $name = null, mixed $filters = null, mixed $defaultValue = null, bool $notAllowEmpty = bool, bool $noRecursive = bool ): mixed;
 ```
-Gets a variable from put request
+Gets a variable from the PUT request
 
 ```php
-// Returns value from $_PUT["user_email"] without sanitizing
+// Returns value from PUT stream without sanitizing
 $userEmail = $request->getPut("user_email");
 
-// Returns value from $_PUT["user_email"] with sanitizing
+// Returns value from PUT stream with sanitizing
 $userEmail = $request->getPut("user_email", "email");
 ```
 
@@ -1756,13 +1756,13 @@ $userEmail = $request->getPost("user_email", "email");
 ```php
 public function getPut( string $name = null, mixed $filters = null, mixed $defaultValue = null, bool $notAllowEmpty = bool, bool $noRecursive = bool ): mixed;
 ```
-Gets a variable from put request
+Gets a variable from the PUT request
 
 ```php
-// Returns value from $_PUT["user_email"] without sanitizing
+// Returns value from PUT stream without sanitizing
 $userEmail = $request->getPut("user_email");
 
-// Returns value from $_PUT["user_email"] with sanitizing
+// Returns value from PUT stream with sanitizing
 $userEmail = $request->getPut("user_email", "email");
 ```
 
@@ -2531,7 +2531,7 @@ Cookies aren't sent if headers are sent in the current request
 
 
 ```php
-public function set( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = null, string $domain = null, bool $httpOnly = null, array $options = [] ): CookiesInterface;
+public function set( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = bool, string $domain = string, bool $httpOnly = bool, array $options = [] ): CookiesInterface;
 ```
 Sets a cookie to be sent at the end of the request.
 
@@ -2637,7 +2637,7 @@ Sends the cookies to the client
 
 
 ```php
-public function set( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = null, string $domain = null, bool $httpOnly = null, array $options = [] ): CookiesInterface;
+public function set( string $name, mixed $value = null, int $expire = int, string $path = string, bool $secure = bool, string $domain = string, bool $httpOnly = bool, array $options = [] ): CookiesInterface;
 ```
 Sets a cookie to be sent at the end of the request
 

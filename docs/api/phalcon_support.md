@@ -592,7 +592,7 @@ Handles uncaught exceptions
 
 
 ```php
-public function onUncaughtLowSeverity( mixed $severity, mixed $message, mixed $file, mixed $line, mixed $context ): void;
+public function onUncaughtLowSeverity( mixed $severity, mixed $message, mixed $file, mixed $line ): void;
 ```
 Throws an exception when a notice or warning is raised
 

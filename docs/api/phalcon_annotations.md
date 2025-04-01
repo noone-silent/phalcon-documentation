@@ -291,6 +291,12 @@ protected $data;
 ### Methods
 
 ```php
+public function __construct();
+```
+
+
+
+```php
 public function read( string $key ): Reflection | bool;
 ```
 Reads parsed annotations from memory
