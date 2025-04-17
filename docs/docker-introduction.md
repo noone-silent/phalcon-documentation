@@ -34,56 +34,25 @@ Take a look at our [Dockerfile](https://github.com/phalcon/cphalcon/blob/master/
 
 ## Extensions
 
-The following list of extensions is included in every release:
+The following list of extensions is installed additional to the extensions of the PHP Docker image in every release:
 
 - apcu
-- ctype
-- curl
-- date
-- dom
-- fileinfo
-- filter
 - gd
 - gettext
-- hash
-- iconv
 - igbinary
 - imagick
 - intl
-- json
-- libxml
-- mbstring
 - mysqli
 - mysqlnd
 - opcache
-- openssl
-- pcre
-- PDO
 - pdo_mysql
 - pdo_pgsql
-- pdo_sqlite
 - pgsql
 - phalcon
-- Phar
-- posix
-- random
-- readline
 - redis
-- Reflection
-- session
-- SimpleXML
-- sodium
-- SPL
-- sqlite3
-- standard
-- tokenizer
-- xml
-- xmlreader
-- xmlwriter
 - xsl
 - yaml
 - zip
-- zlib
 
 ## Extending the Docker image
 
